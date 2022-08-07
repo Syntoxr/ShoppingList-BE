@@ -1,23 +1,12 @@
-### ShoppingList
+### ShoppingList-BE
 
-A simple selfhosted shopping list
-
-> ## ⚠️ This is still in development and a few cool functions are comming soon - hopefully.
-
-## Demo
-
-An up to date demo with a simulated backend can be seen here: [https://syntoxr.github.io/ShoppingList/](https://syntoxr.github.io/ShoppingList/):
-
-- user name: `user`
-- password: `notSave`
-
-This is my first web application so feel free to report any issues you find.
+This is the backend of my ShoppingList project.
 
 ## Getting started
 
 > In order to run docker containers, you obviously need to install docker and optionally docker-compose.
 
-The shopping list can be run in two separate docker containers:
+The shopping list has to be run in two separate docker containers:
 
 - shoppinglist-ui (frontend)
 - shoppinglist-be (backend)
@@ -59,14 +48,6 @@ can also be seen [here](docker-compose.yml)
 
 ### Environment variables
 
-#### Frontend
-
-| Key      | Default value | Description                                       |
-| :------- | :-----------: | :------------------------------------------------ |
-| API_HOST |       -       | Host which the api requests should be proxied to. |
-
-#### Backend
-
 | Key                | Default value | Description                                                                                                                                                                              |
 | :----------------- | :-----------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | USERS              |      [ ]      | JSON array which contains all users that schould be albe to login. If not provided no one will be able to login.                                                                         |
@@ -98,7 +79,7 @@ The Rest endpoint can be used to easily interact with the backend through other 
 
 The REST endpoints are served under `/api/`
 
-| **Name**     |        **Endpoint**        | **Reguest type** | **Consumes data** |         **Response data**          | **Description**                                                                                         |
+| **Name**     |        **Endpoint**        | **Reguest type** | **Consumed data** |         **Response data**          | **Description**                                                                                         |
 | :----------- | :------------------------: | :--------------: | :---------------: | :--------------------------------: | :------------------------------------------------------------------------------------------------------ |
 | authenticate |     `/auth/api/login/`     |       GET        |         -         |           `{token: JWT}`           | Requires basic auth cretentials as a Bearer Token authorization header. Responds with a JSON web token. |
 | add item     |   `/shoppinglist/item/`    |       POST       |   [Item](#item)   | `{ oldId: number, newId: number }` | Consumes an item with a temporary id and updates backend. Responds with the old- and new id             |
@@ -121,7 +102,3 @@ The item list is a list of all entered items, regardless of whether they were ch
 
 Authentication is done via a GET request with basic auth credentials to `/api/auth/login`.
 With correct credentials the response will be a JSON web token (JWT) which can be used to access all other resources like (REST and socket.io). The token has to be sent in each HTTP request or the socket connect call as a Bearer Token authorization header.
-
-#### Backend settings
-
-Valid users can be set via [environment variables](#environment-variables) .
