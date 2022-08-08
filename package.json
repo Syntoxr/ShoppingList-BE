@@ -1,6 +1,6 @@
 {
   "name": "shoppinglist-be",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Backend for shoppinglist",
   "main": "server.js",
   "scripts": {
