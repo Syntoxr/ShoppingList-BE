@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/Syntoxr/ShoppingList-BE/compare/v2.0.1...v2.0.2) (2022-08-08)
+
+
+### Bug Fixes
+
+* reduced container size by almost 7 times ([0043fa9](https://github.com/Syntoxr/ShoppingList-BE/commit/0043fa923133956c8960a70c6aae806e3f2b4ded))
+
 ## 2.0.1 (2022-08-08)
 
 
