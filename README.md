@@ -22,7 +22,8 @@ volumes:
 
 services:
   frontend:
-    image: ghcr.io/syntoxr/shoppinglist-ui:latest
+    image: ghcr.io/syntoxr/shoppinglist-fe:latest
+    restart: always
     container_name: shoppinglist-frontend
     ports:
       - 80:80
@@ -32,6 +33,7 @@ services:
 
   backend:
     image: ghcr.io/syntoxr/shoppinglist-be:latest
+    restart: always
     container_name: shoppinglist-backend
     expose:
       - 8080
